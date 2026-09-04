@@ -34,7 +34,7 @@ source ~/.bashrc
 You must have the following programs installed, and you ***must also add the binaries for these programs to your PATH***:
 
 
-***---> BLAST+ to run BLASTx (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html#blast-executables)
+***---> BLAST+ to run BLASTx (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html#blast-executables)  
 ---> Entrez Direct to download the HA database (https://www.ncbi.nlm.nih.gov/books/NBK179288/)***
 
 
@@ -58,9 +58,31 @@ source ~/.bashrc
 
 # Using and Running the Pipeline
 
-Once you have all the requirements, you should run the pipeline as follows:
+This pipeline consists of two steps: annotation to determine the correct reading frame and pathogenicity assessment.
 
+For the first step, in which the nucleotide sequence will be converted into a protein
+```
+bash HACSF_BLASTx_annotate.sh -f FASTA file PATH -o OUTDIR PATH -p BLAST DB PATH"
 
+Options:
+Usage: HACSF_BLASTx_annotate.sh -f FASTA file PATH -o OUTDIR PATH -p BLAST DB PATH
+ -h print help 
+ -f FASTA file directory 
+ -o OUTPUT directory 
+ -p PATH to BLAST database. If you downloaded the database by running the HACF_db_dwl.sh script, the path to your database is: $HOME/db/BLASTx/HA
+```
+
+In the second step, the cleavage site and pathogenicity will be determined based on its amino acid sequence (protein)
+```
+bash HACSF_cleavage_search.sh -a AMINO ACID FASTA file PATH -e RESULT OUTDIR PATH -r REFERENCE DB PATH
+
+Options:
+Usage: HACSF_cleavage_search.sh -a AMINO ACID FASTA file PATH -e RESULT OUTDIR PATH -r REFERENCE DB PATH
+ -h print help 
+ -a AMINO ACID FASTA file directory 
+ -e RESULT OUTPUT directory 
+ -r PATH to REFERENCE Cleavage Sites database (The file of Cleavage Sites is /db/Cleavage_Sites.tsv) 
+```
 
 
 
