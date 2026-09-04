@@ -28,3 +28,47 @@ export PATH="$HOME/PATH_TO/HACSF/bin:$PATH"
 source ~/.bashrc
 
 ```
+
+# Required dependencies:
+
+You must have the following programs installed, and you ***must also add the binaries for these programs to your PATH***:
+
+
+***---> BLAST+ to run BLASTx (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html#blast-executables)
+---> Entrez Direct to download the HA database (https://www.ncbi.nlm.nih.gov/books/NBK179288/)***
+
+
+# Prepare the Database
+
+Once you have installed the necesary dependencies, you must run the ***HACSF_db_dwl.sh*** script as follows:
+
+```
+bash HACSF_db_dwl.sh
+```
+
+This will download the databases to the $HOME/db/BLASTx/HA folder. If you'd like, you can add the path to these generated files to your ~/.bashrc file as follows:
+
+```
+nano ~/.bashrc
+
+export Bx_HACSF_PATH="$HOME/db/BLASTx/HA"
+
+source ~/.bashrc
+```
+
+# Using and Running the Pipeline
+
+Once you have all the requirements, you should run the pipeline as follows:
+
+
+
+
+
+
+
+
+
+
+
+
+
