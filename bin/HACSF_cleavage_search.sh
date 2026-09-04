@@ -22,7 +22,7 @@ echo "Usage: $0 -a AMINO ACID FASTA file PATH -e RESULT OUTDIR PATH -r REFERENCE
 echo " -h print help "
 echo " -a AMINO ACID FASTA file directory "
 echo " -e RESULT OUTPUT directory "
-echo " -r PATH to REFERENCE Cleavage Sites database. "
+echo " -r PATH to REFERENCE Cleavage Sites database (The file of Cleavage Sites is /db/Cleavage_Sites.tsv). "
 echo "";
 	 }
 
