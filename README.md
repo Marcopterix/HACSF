@@ -84,7 +84,9 @@ Usage: HACSF_cleavage_search.sh -a AMINO ACID FASTA file PATH -e RESULT OUTDIR P
  -r PATH to REFERENCE Cleavage Sites database (The file of Cleavage Sites is /db/Cleavage_Sites.tsv) 
 ```
 
+# Output Files
 
+At the end of the first pipline process, in the directory you specified with the ***-o*** you will find
 
 
 
