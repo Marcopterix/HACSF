@@ -98,7 +98,7 @@ echo -e "##### ${ID}  #####"
 
 awk '
 BEGIN {
-        print"Contig\tCleavage_site\tPhenotype\tSubtype\tNotes";
+        print"Contig\tCleavage_site\tPhenotype\tAssociated_subtype\tNotes";
         FS="\t";
        }
 
