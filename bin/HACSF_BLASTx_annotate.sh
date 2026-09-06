@@ -105,7 +105,7 @@ for assembly in *.fa *.fasta *.fna; do
 echo -e "##### ${ID} #####"
 
 blastx -query ${assembly} \
-       -db $BxIA_DB_PATH/${dbHA} \
+       -db ${dirdb}/${dbHA} \
        -max_target_seqs 1 -max_hsps 1 \
        -evalue 1e-80 \
        -num_threads 5 \
