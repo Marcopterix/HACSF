@@ -36,7 +36,7 @@ You must have the following programs installed, and you ***must also add the bin
 
 ***---> BLAST+ to run BLASTx (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html#blast-executables)  
 ---> Entrez Direct to download the HA database (https://www.ncbi.nlm.nih.gov/books/NBK179288/)  
----> seqkit (https://github.com/shenwei356/seqkit)***
+---> seqkit (https://bioinf.shenwei.me/seqkit/download/)***
 
 
 # Prepare the Database
