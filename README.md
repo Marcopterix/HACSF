@@ -70,6 +70,10 @@ bash HACSF_BLASTx_annotate.sh \
      -p $HOME/db/BLASTx/HA
 ```
 
+# Output Files of the first step
+In the directory you specified with the “-o” option, you'll find an Annotation_HA.tsv file, as well as a “Proteins” directory containing the FASTA files of the protein sequences (.fna).
+
+
 *2-* In the second step, the cleavage site and pathogenicity will be determined based on its amino acid sequence (protein).
 In this case, following the previous step, the output of your FASTA files containing protein sequences would be: $HOME/projects/fasta/IA_HACS/BLASTx_results/Proteinas; that the output path you would like is: $HOME/projects/IA_HACS/HACF_out; and finally, the path to the reference file containing information on cleavage sites and their phenotype (HACSF/db/Cleavage_Sites.tsv): $HOME/bioinformatics_tools/HACSF/db (You don't need to specify the file name, JUST THE PATH, since the pipeline identifies it automatically). 
 ```
@@ -79,12 +83,8 @@ bash HACSF_cleavage_search.sh \
      -r $HOME/bioinformatics_tools/HACSF/db
 ```
 
-# Output Files
-
-At the end of the first pipline process, in the directory you specified with the ***-o*** you will find
-
-
-
+# Output Files of the second step
+At the end of the second run, in the directory you specified as the output directory using the “-e” option, you will find the generated “.tsv” files, which contain the contig name, information about the identified cleavage site (if a match was found with one in the reference file), its associated phenotype (HP/LP), the subtypes associated with that cleavage site and, if no similarity was found, information regarding the site found in the NOTES section.
 
 
 
