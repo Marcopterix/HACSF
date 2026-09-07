@@ -1,6 +1,8 @@
 # HA Cleavage Site Finder (HACSF)
 HA Cleavage Site Finder is a bioinformatics workflow developed to identify cleavage sites in the hemagglutinin gene of the influenza A virus (IA) and infer its pathogenicity. The database used for prediction is based on the latest version (2022, to date) of: OFFLU. (2022). Influenza A Cleavage Sites. Version 4th January 2022.
 
+
+
 # Installation:
 To clone this repository, run:
 
@@ -29,6 +31,8 @@ source ~/.bashrc
 
 ```
 
+
+
 # Required dependencies:
 
 You must have the following programs installed, and you ***must also add the binaries for these programs to your PATH***:
@@ -37,6 +41,8 @@ You must have the following programs installed, and you ***must also add the bin
 ***---> BLAST+ to run BLASTx (https://blast.ncbi.nlm.nih.gov/doc/blast-help/downloadblastdata.html#blast-executables)  
 ---> Entrez Direct to download the HA database (https://www.ncbi.nlm.nih.gov/books/NBK179288/)  
 ---> seqkit (https://bioinf.shenwei.me/seqkit/download/)***
+
+
 
 
 # Prepare the Database
@@ -57,6 +63,9 @@ export Bx_HACSF_PATH="$HOME/db/BLASTx/HA"
 source ~/.bashrc
 ```
 
+
+
+
 # 1- Using and Running the first step
 
 This pipeline consists of two steps: annotation to determine the correct reading frame and pathogenicity assessment.
@@ -70,8 +79,13 @@ bash HACSF_BLASTx_annotate.sh \
      -p $HOME/db/BLASTx/HA
 ```
 
+
+
 # Output Files of the first step
 In the directory you specified with the “-o” option, you'll find an Annotation_HA.tsv file, as well as a “Proteins” directory containing the FASTA files of the protein sequences (.fna).
+
+
+
 
 # 2- Using and Running the second step
 In the second step, the cleavage site and pathogenicity will be determined based on its amino acid sequence (protein).
@@ -82,6 +96,9 @@ bash HACSF_cleavage_search.sh \
      -e $HOME/projects/IA_HACS/HACF_out \
      -r $HOME/bioinformatics_tools/HACSF/db
 ```
+
+
+
 
 # Output Files of the second step
 At the end of the second run, in the directory you specified as the output directory using the “-e” option, you will find the generated “.tsv” files, which contain the contig name, information about the identified cleavage site (if a match was found with one in the reference file), its associated phenotype (HP/LP), the subtypes associated with that cleavage site and, if no similarity was found, information regarding the site found in the NOTES section.
