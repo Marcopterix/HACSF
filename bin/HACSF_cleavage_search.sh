@@ -77,22 +77,24 @@ if [[ -z ${dirdb} ]]; then
    echo -e "\033[0;33mThe database file of Cleavage Sites is "PATH/TO/HACSF/db/Cleavage_Sites.tsv".\033[0m"
    exit 1
 fi
-#
+
 mkdir -p ${dirout}
-
-#---------------------------
-# Define paths as variables
-#---------------------------
-
-DB=${dirdb}
-FASTA=${dirfa}
-ID=$(basename ${FASTA} | cut -d '.' -f '1')
+cd ${dirfa}
 
 #------------------------------------------------
 # Determining the cleavage site and pathogenicity
 #------------------------------------------------
 
+DB="${dirdb}/Cleavage_Sites.tsv"
+
+echo -e "Reference file = ${DB}"
+
 echo -e "\n\033[1;36m========== Determining the cleavage site and pathogenicity ==========\033[0m\n"
+
+shopt -s nullglob
+
+for a in *.fa* *.fna *.faa; do
+    ID=$(basename ${a} | cut -d '.' -f '1')
 
 echo -e "##### ${ID}  #####"
 
@@ -149,4 +151,6 @@ END {
                         }; header=$0
        }
          {seq=seq $0
-          }' "$DB" "$FASTA" > ${dirout}/${ID}_HACF.tsv
+          }' ${DB} ${a} > ${dirout}/${ID}_HACF.tsv
+
+done
