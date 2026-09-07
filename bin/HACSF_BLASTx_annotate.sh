@@ -112,13 +112,8 @@ blastx -query ${assembly} \
        -out ${dirout}/${ID}_HA_blastx.tsv \
        -outfmt '6 qseqid sseqid pident length mismatch qstart qend evalue bitscore qseq'
 
-#-qcov_hsp_perc 90 \
-#-evalue 1e-10 \
-
-#Extraer secuencia de proteína de HA en formato FASTA
 awk '{print ">"$1"_HA""\n"$10}' ${dirout}/${ID}_HA_blastx.tsv > ${dirout}/${ID}_HA_prot.fna
 
-# Información del alineamiento
 awk '{print $1"\t"$2"\t"$3"\t"$4"\t"$5"\t"$6"\t"($7+3)"\t"$8"\t"$9"\t""HA"}' ${dirout}/${ID}_HA_blastx.tsv \
 > ${dirout}/${ID}_HA_info.tsv
 
