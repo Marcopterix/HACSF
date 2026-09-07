@@ -135,8 +135,8 @@ echo -e "\n########## ${ename} ########## \n$(cat ${f})"
 
 rm ${dirout}/*_HA_info.tsv
 
-mkdir -p ${dirout}/Proteinas
-mv ${dirout}/*.fna ${dirout}/Proteinas
+mkdir -p ${dirout}/Proteins
+mv ${dirout}/*.fna ${dirout}/Proteins
 
 echo -e "\033[5;32m#################################################################\033[0m"
 echo -e "\033[5;32m========== Annotation of HA gene with BLASTx completed ==========\033[0m"
