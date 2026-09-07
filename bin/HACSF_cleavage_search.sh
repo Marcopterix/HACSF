@@ -22,7 +22,7 @@ echo "Usage: $0 -a AMINO ACID FASTA file PATH -e RESULT OUTDIR PATH -r REFERENCE
 echo " -h print help "
 echo " -a AMINO ACID FASTA file directory "
 echo " -e RESULT OUTPUT directory "
-echo " -r PATH to REFERENCE Cleavage Sites database (The file of Cleavage Sites is /db/Cleavage_Sites.tsv). "
+echo " -r PATH to REFERENCE Cleavage Sites database (The file of Cleavage Sites is PATH/TO/HACSF/db/Cleavage_Sites.tsv) "
 echo "";
 	 }
 
@@ -74,7 +74,7 @@ fi
 #
 if [[ -z ${dirdb} ]]; then
    echo -e "\033[0;33mError: Option -r is necesary.\033[0m"
-   echo -e "\033[0;33mThe database file of Cleavage Sites is "Cleavage_Sites.tsv".\033[0m"
+   echo -e "\033[0;33mThe database file of Cleavage Sites is "PATH/TO/HACSF/db/Cleavage_Sites.tsv".\033[0m"
    exit 1
 fi
 #
