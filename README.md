@@ -57,11 +57,11 @@ export Bx_HACSF_PATH="$HOME/db/BLASTx/HA"
 source ~/.bashrc
 ```
 
-# Using and Running the Pipeline
+# 1- Using and Running the first step
 
 This pipeline consists of two steps: annotation to determine the correct reading frame and pathogenicity assessment.
 
-*1-* For the first step, in which the nucleotide sequence will be converted into a protein. 
+For the first step, in which the nucleotide sequence will be converted into a protein. 
 Let's assume that the path to your fasta files is: $HOME/projects/fasta/IA_HACS; your output path is: $HOME/projects/fasta/IA_HACS/BLASTx_results; and the path to the BLASTx database when running the HACSF_db_dwl.sh pipeline would be: $HOME/db/BLASTx/HA. You'll need to run the script as follows
 ```
 bash HACSF_BLASTx_annotate.sh \  
@@ -73,8 +73,8 @@ bash HACSF_BLASTx_annotate.sh \
 # Output Files of the first step
 In the directory you specified with the “-o” option, you'll find an Annotation_HA.tsv file, as well as a “Proteins” directory containing the FASTA files of the protein sequences (.fna).
 
-
-*2-* In the second step, the cleavage site and pathogenicity will be determined based on its amino acid sequence (protein).
+# 2- Using and Running the second step
+In the second step, the cleavage site and pathogenicity will be determined based on its amino acid sequence (protein).
 In this case, following the previous step, the output of your FASTA files containing protein sequences would be: $HOME/projects/fasta/IA_HACS/BLASTx_results/Proteinas; that the output path you would like is: $HOME/projects/IA_HACS/HACF_out; and finally, the path to the reference file containing information on cleavage sites and their phenotype (HACSF/db/Cleavage_Sites.tsv): $HOME/bioinformatics_tools/HACSF/db (You don't need to specify the file name, JUST THE PATH, since the pipeline identifies it automatically). 
 ```
 bash HACSF_cleavage_search.sh \
