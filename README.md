@@ -71,7 +71,10 @@ source ~/.bashrc
 This pipeline consists of two steps: annotation to determine the correct reading frame and pathogenicity assessment.
 
 For the first step, in which the nucleotide sequence will be converted into a protein. 
-Let's assume that the path to your fasta files is: $HOME/projects/fasta/IA_HACS; your output path is: $HOME/projects/fasta/IA_HACS/BLASTx_results; and the path to the BLASTx database when running the HACSF_db_dwl.sh pipeline would be: $HOME/db/BLASTx/HA. You'll need to run the script as follows
+Let's assume that:  
+The path to your fasta files is: $HOME/projects/fasta/IA_HACS;   
+your output path is: $HOME/projects/fasta/IA_HACS/BLASTx_results;   
+and the path to the BLASTx database when running the HACSF_db_dwl.sh pipeline would be: $HOME/db/BLASTx/HA. You'll need to run the script as follows
 ```
 bash HACSF_BLASTx_annotate.sh \  
      -f $HOME/projects/fasta/IA_HACS \
@@ -89,7 +92,10 @@ In the directory you specified with the “-o” option, you'll find an Annotati
 
 # 2- Using and Running the second step
 In the second step, the cleavage site and pathogenicity will be determined based on its amino acid sequence (protein).
-In this case, following the previous step, the output of your FASTA files containing protein sequences would be: $HOME/projects/fasta/IA_HACS/BLASTx_results/Proteinas; that the output path you would like is: $HOME/projects/IA_HACS/HACF_out; and finally, the path to the reference file containing information on cleavage sites and their phenotype (HACSF/db/Cleavage_Sites.tsv): $HOME/bioinformatics_tools/HACSF/db (You don't need to specify the file name, JUST THE PATH, since the pipeline identifies it automatically). 
+In this case, following the previous step, the output of:  
+Your FASTA files containing protein sequences would be: $HOME/projects/fasta/IA_HACS/BLASTx_results/Proteins;   
+that the output path you would like is: $HOME/projects/IA_HACS/HACF_out;   
+and finally, the path to the reference file containing information on cleavage sites and their phenotype (HACSF/db/Cleavage_Sites.tsv): $HOME/bioinformatics_tools/HACSF/db (You don't need to specify the file name, JUST THE PATH, since the pipeline identifies it automatically). 
 ```
 bash HACSF_cleavage_search.sh \
      -a $HOME/projects/fasta/IA_HACS/BLASTx_results/Proteinas \
